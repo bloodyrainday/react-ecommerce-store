@@ -4,6 +4,7 @@ import "./style.scss";
 
 import handIcon from "../../assets/hand_icon.png";
 import arrowIcon from "../../assets/arrow.png";
+import heroImage from "../../assets/hero_image.png";
 
 type Props = {};
 
@@ -26,7 +27,9 @@ const Banner = (props: Props) => {
         </div>
       </div>
 
-      <div className="banner__right"></div>
+      <div className="banner__right">
+        <img src={heroImage} alt="hero-img" />
+      </div>
     </div>
   );
 };
