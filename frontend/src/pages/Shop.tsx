@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Popular from "../components/Popular";
 import Offers from "../components/Offers";
 import NewCollections from "../components/NewCollections";
+import NewsLetter from "../components/NewsLetter";
 
 type Props = {};
 
@@ -13,6 +14,7 @@ const Shop = (props: Props) => {
       <Popular />
       <Offers />
       <NewCollections />
+      <NewsLetter />
     </>
   );
 };
