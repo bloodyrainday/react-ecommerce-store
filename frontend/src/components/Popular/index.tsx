@@ -23,7 +23,7 @@ const Popular = (props: Props) => {
 
       <div className="popular__item">
         {data_product.map((item: TypeItem) => {
-          return <Item item={item} key={item.name} />;
+          return <Item item={item} key={item.id} />;
         })}
       </div>
     </div>

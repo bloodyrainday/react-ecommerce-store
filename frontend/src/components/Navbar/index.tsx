@@ -5,10 +5,15 @@ import "./style.scss";
 import logo from "../../assets/logo.png";
 import cartIcon from "../../assets/cart_icon.png";
 import { Link } from "react-router-dom";
+import { ShopContext } from "../../index";
+
+import { IContextValue } from "../../index";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const { all_product } = React.useContext<IContextValue>(ShopContext);
+  console.log(all_product);
   const [isLinkClicked, setIsLinkClicked] = React.useState(0);
 
   const clickLink = (number: number) => {

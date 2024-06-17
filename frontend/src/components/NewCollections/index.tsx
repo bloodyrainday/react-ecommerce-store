@@ -16,8 +16,8 @@ const NewCollections = (props: Props) => {
       <span className="new-collections__underline"></span>
 
       <div className="new-collections__item">
-        {new_collections.map((item: TypeItem) => {
-          return <Item item={item} />;
+        {new_collections.map((item: TypeItem, index) => {
+          return <Item item={item} key={item.id} />;
         })}
       </div>
     </div>
