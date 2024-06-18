@@ -16,7 +16,7 @@ const ShopCategory = ({ category, banner }: Props) => {
   console.log(all_product);
   return (
     <div className="shop-category">
-      <img src={banner} alt="banner" />
+      <img className="shop-category__banner" src={banner} alt="banner" />
 
       <div className="shop-category__indexSort">
         <p>
@@ -33,8 +33,11 @@ const ShopCategory = ({ category, banner }: Props) => {
           if (item.category === category) {
             return <Item item={item} key={item.id} />;
           }
+          return null;
         })}
       </div>
+
+      <div className="shop-category__loadmorebtn">explore more</div>
     </div>
   );
 };
