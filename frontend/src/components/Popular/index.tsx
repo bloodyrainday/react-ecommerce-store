@@ -13,6 +13,7 @@ export type TypeItem = {
   name: string;
   new_price: number;
   old_price: number;
+  category?: string;
 };
 
 const Popular = (props: Props) => {
