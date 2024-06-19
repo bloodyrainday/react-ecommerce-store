@@ -1,9 +1,21 @@
 import React from "react";
+import { IContextValue, ShopContext } from "..";
+import { useParams } from "react-router-dom";
+import ProductLinkPath from "../components/ProductLinkPath";
+import { TypeItem } from "../components/Popular";
 
 type Props = {};
 
 const Product = (props: Props) => {
-  return <div>Product</div>;
+  const { all_product } = React.useContext<IContextValue>(ShopContext);
+  const { productId } = useParams();
+  const product = all_product.find((e) => e.id === Number(productId));
+  console.log("product", product);
+  return (
+    <div className="product">
+      <ProductLinkPath product={product} />
+    </div>
+  );
 };
 
 export default Product;
