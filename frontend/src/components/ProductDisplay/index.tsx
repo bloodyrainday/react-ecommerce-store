@@ -38,8 +38,12 @@ const ProductDisplay = ({ product }: Props) => {
         </div>
 
         <div className="product-display__prices">
-          <div className="product-display-price-old">${product?.old_price}</div>
-          <div className="product-display-price-new">${product?.new_price}</div>
+          <div className="product-display__price-old">
+            ${product?.old_price}
+          </div>
+          <div className="product-display__price-new">
+            ${product?.new_price}
+          </div>
         </div>
 
         <div className="product-display__desc">

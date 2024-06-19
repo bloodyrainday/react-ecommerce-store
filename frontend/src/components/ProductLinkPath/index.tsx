@@ -12,7 +12,7 @@ type Props = {
 
 const ProductLinkPath = ({ product }: Props) => {
   return (
-    <div>
+    <div className="productlinkpath">
       HOME <img src={arrow_icon} alt="arrow-icon" /> SHOP{" "}
       <img src={arrow_icon} alt="arrow-icon" /> {product?.category}{" "}
       <img src={arrow_icon} alt="arrow-icon" /> {product?.name}
