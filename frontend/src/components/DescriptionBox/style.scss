@@ -1,0 +1,16 @@
+.descriptionbox {
+  margin: 120px 170px;
+
+  &__nav {
+    display: flex;
+  }
+
+  &__navbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    width: 171px;
+  }
+}
