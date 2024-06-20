@@ -5,6 +5,7 @@ import ProductLinkPath from "../components/ProductLinkPath";
 import { TypeItem } from "../components/Popular";
 import ProductDisplay from "../components/ProductDisplay";
 import DescriptionBox from "../components/DescriptionBox";
+import RelatedProduct from "../components/RelatedProduct";
 
 type Props = {};
 
@@ -18,6 +19,7 @@ const Product = (props: Props) => {
       <ProductLinkPath product={product} />
       <ProductDisplay product={product} />
       <DescriptionBox />
+      <RelatedProduct />
     </div>
   );
 };
