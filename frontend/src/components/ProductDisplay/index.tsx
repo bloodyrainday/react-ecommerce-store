@@ -5,29 +5,41 @@ import startIcon from "../../assets/star_icon.png";
 import starDullIcon from "../../assets/star_dull_icon.png";
 
 import "./style.scss";
+import { ShopContext } from "../../App";
 
 type Props = {
   product: TypeItem | undefined;
 };
 
 const ProductDisplay = ({ product }: Props) => {
+  const { all_product, cartProducts, setCartProducts } =
+    React.useContext(ShopContext);
+
+  console.log("cartproducts", cartProducts);
+
+  const addToCart = (item: TypeItem | undefined) => {
+    if (item) {
+      setCartProducts([...cartProducts, item]);
+    }
+  };
+
   return (
     <div className="product-display">
       <div className="product-display__left">
         <div className="product-display__images">
-          <img src={product?.image} alt="img" />
-          <img src={product?.image} alt="img" />
-          <img src={product?.image} alt="img" />
-          <img src={product?.image} alt="img" />
+          <img src={product && product.image} alt="img" />
+          <img src={product && product.image} alt="img" />
+          <img src={product && product.image} alt="img" />
+          <img src={product && product.image} alt="img" />
         </div>
 
         <div className="product-display__main-img">
-          <img src={product?.image} alt="img" />
+          <img src={product && product.image} alt="img" />
         </div>
       </div>
 
       <div className="product-display__right">
-        <h2>{product?.name}</h2>
+        <h2>{product && product.name}</h2>
         <div className="product-display__rating">
           <img src={starDullIcon} alt="img" />
           <img src={starDullIcon} alt="img" />
@@ -39,10 +51,10 @@ const ProductDisplay = ({ product }: Props) => {
 
         <div className="product-display__prices">
           <div className="product-display__price-old">
-            ${product?.old_price}
+            ${product && product.old_price}
           </div>
           <div className="product-display__price-new">
-            ${product?.new_price}
+            ${product && product.new_price}
           </div>
         </div>
 
@@ -64,7 +76,7 @@ const ProductDisplay = ({ product }: Props) => {
           </div>
         </div>
 
-        <button>add to cart</button>
+        <button onClick={() => addToCart(product)}>add to cart</button>
         <p className="product-display__category">
           <span>Category:</span>Women, T-Shirt, Crop Top
         </p>

@@ -1,5 +1,5 @@
 import React from "react";
-import { IContextValue, ShopContext } from "..";
+import { IContextValue, ShopContext } from "../App";
 
 import "./styles/ShopCategory.scss";
 
@@ -12,8 +12,9 @@ type Props = {
 };
 
 const ShopCategory = ({ category, banner }: Props) => {
-  const { all_product } = React.useContext<IContextValue>(ShopContext);
-  console.log(all_product);
+  const { all_product } = React.useContext(ShopContext);
+
+  console.log("usecontext", all_product);
   return (
     <div className="shop-category">
       <img className="shop-category__banner" src={banner} alt="banner" />

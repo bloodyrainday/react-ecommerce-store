@@ -13,31 +13,48 @@ import menBanner from "./assets/banner_mens.png";
 import womenBanner from "./assets/banner_women.png";
 import kidsBanner from "./assets/banner_kids.png";
 
+import all_product from "./assets/all_product";
+import { TypeItem } from "./components/Popular";
+
+export interface IContextValue {
+  all_product: Array<TypeItem>;
+  cartProducts: Array<TypeItem>;
+  setCartProducts: React.Dispatch<React.SetStateAction<TypeItem[]>>;
+}
+
+export const ShopContext = React.createContext({} as IContextValue);
+
 function App() {
+  const [cartProducts, setCartProducts] = React.useState<Array<TypeItem>>([]);
+
   return (
     <div className="app">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Shop />} />
-        <Route
-          path="/men"
-          element={<ShopCategory category="men" banner={menBanner} />}
-        />
-        <Route
-          path="/women"
-          element={<ShopCategory category="women" banner={womenBanner} />}
-        />
-        <Route
-          path="/kids"
-          element={<ShopCategory category="kid" banner={kidsBanner} />}
-        />
-        <Route path="/product" element={<Product />}>
-          <Route path=":productId" element={<Product />} />
-        </Route>
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-      <Footer />
+      <ShopContext.Provider
+        value={{ all_product, cartProducts, setCartProducts }}
+      >
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Shop />} />
+          <Route
+            path="/men"
+            element={<ShopCategory category="men" banner={menBanner} />}
+          />
+          <Route
+            path="/women"
+            element={<ShopCategory category="women" banner={womenBanner} />}
+          />
+          <Route
+            path="/kids"
+            element={<ShopCategory category="kid" banner={kidsBanner} />}
+          />
+          <Route path="/product" element={<Product />}>
+            <Route path=":productId" element={<Product />} />
+          </Route>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        <Footer />
+      </ShopContext.Provider>
     </div>
   );
 }

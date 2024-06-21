@@ -4,7 +4,7 @@ import "./style.scss";
 
 import arrow_icon from "../../assets/breadcrum_arrow.png";
 import { TypeItem } from "../Popular";
-import { IContextValue } from "../..";
+import { IContextValue } from "../../App";
 
 type Props = {
   product: TypeItem | undefined;

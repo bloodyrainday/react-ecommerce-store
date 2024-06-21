@@ -14,7 +14,7 @@ const RelatedProduct = (props: Props) => {
       <hr />
       <div className="relatedproduct__item">
         {data_product.map((item) => {
-          return <Item item={item} />;
+          return <Item item={item} key={item.id} />;
         })}
       </div>
     </div>
