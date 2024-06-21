@@ -50,7 +50,7 @@ const CartProducts = (props: Props) => {
 
       <div className="cartproducts__down">
         <div className="cartproducts__total-list">
-          <p>cart Totals</p>
+          <h2>cart Totals</h2>
           <div>
             <div className="cartproducts__total-item">
               <p>Subtotal</p>
