@@ -28,17 +28,61 @@ const CartProducts = (props: Props) => {
         return (
           <div>
             <div className="cartproducts__item">
-              <img src={item.image} alt="cartitem-icon" />
+              <img
+                className="cartproducts__icon"
+                src={item.image}
+                alt="cartitem-icon"
+              />
               <p>{item.name}</p>
               <p>${item.new_price}</p>
-              <button className="cartitems-btn-quantity"></button>
-              <p></p>
-              <img src={removeIcon} alt="remove-icon" />
+              <button className="cartproducts__btn-quantity">0</button>
+              <p>$10</p>
+              <img
+                className="cartproducts__remove-icon"
+                src={removeIcon}
+                alt="remove-icon"
+              />
             </div>
             <hr />
           </div>
         );
       })}
+
+      <div className="cartproducts__down">
+        <div className="cartproducts__total-list">
+          <p>cart Totals</p>
+          <div>
+            <div className="cartproducts__total-item">
+              <p>Subtotal</p>
+              <p>${0}</p>
+            </div>
+
+            <hr />
+
+            <div className="cartproducts__total-item">
+              <p>Shipping Fee</p>
+              <p>Free</p>
+            </div>
+
+            <hr />
+
+            <div className="cartproducts__total-item">
+              <p>Total</p>
+              <p>${0}</p>
+            </div>
+          </div>
+
+          <button>PROCEED TO CHECKOUT</button>
+        </div>
+
+        <div className="cartproducts__promocode">
+          <p>if you have a promocode, enter it here</p>
+          <div className="cartproducts__promobox">
+            <input type="text" placeholder="promo code" />
+            <button>SUBMIT</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
