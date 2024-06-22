@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 import "./style.scss";
 import { ShopContext } from "../../App";
@@ -10,6 +10,16 @@ type Props = {};
 const CartProducts = (props: Props) => {
   const { all_product, cartProducts, setCartProducts } =
     React.useContext(ShopContext);
+
+  const countQuantity = (id: number) => {
+    let count = 0;
+    cartProducts.filter((product) => {
+      if (product.id === id) {
+        count++;
+      }
+    });
+    return count;
+  };
 
   return (
     <div className="cartproducts">
@@ -35,7 +45,9 @@ const CartProducts = (props: Props) => {
               />
               <p>{item.name}</p>
               <p>${item.new_price}</p>
-              <button className="cartproducts__btn-quantity">0</button>
+              <span className="cartproducts__btn-quantity">
+                {countQuantity(item.id)}
+              </span>
               <p>$10</p>
               <img
                 className="cartproducts__remove-icon"
