@@ -12,14 +12,14 @@ type Props = {
 };
 
 const ProductDisplay = ({ product }: Props) => {
-  const { all_product, cartProducts, setCartProducts } =
+  const { all_product, cartItems, setCartProducts } =
     React.useContext(ShopContext);
 
-  console.log("cartproducts", cartProducts);
+  console.log("cartproducts", cartItems);
 
   const addToCart = (item: TypeItem | undefined) => {
     if (item) {
-      setCartProducts([...cartProducts, item]);
+      setCartProducts([...cartItems, item]);
     }
   };
 

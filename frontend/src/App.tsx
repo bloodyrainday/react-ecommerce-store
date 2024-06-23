@@ -18,20 +18,18 @@ import { TypeItem } from "./components/Popular";
 
 export interface IContextValue {
   all_product: Array<TypeItem>;
-  cartProducts: Array<TypeItem>;
+  cartItems: Array<TypeItem>;
   setCartProducts: React.Dispatch<React.SetStateAction<TypeItem[]>>;
 }
 
 export const ShopContext = React.createContext({} as IContextValue);
 
 function App() {
-  const [cartProducts, setCartProducts] = React.useState<Array<TypeItem>>([]);
+  const [cartItems, setCartProducts] = React.useState<Array<TypeItem>>([]);
 
   return (
     <div className="app">
-      <ShopContext.Provider
-        value={{ all_product, cartProducts, setCartProducts }}
-      >
+      <ShopContext.Provider value={{ all_product, cartItems, setCartProducts }}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Shop />} />

@@ -1,25 +1,40 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
 import "./style.scss";
 import { ShopContext } from "../../App";
 
 import removeIcon from "../../assets/cart_cross_icon.png";
+import { TypeItem } from "../Popular";
 
 type Props = {};
 
 const CartProducts = (props: Props) => {
-  const { all_product, cartProducts, setCartProducts } =
+  const { all_product, cartItems, setCartProducts } =
     React.useContext(ShopContext);
+
+  const [filteredProducts, setFilteredProducts] = React.useState<
+    Array<TypeItem>
+  >([]);
 
   const countQuantity = (id: number) => {
     let count = 0;
-    cartProducts.filter((product) => {
+    cartItems.filter((product) => {
       if (product.id === id) {
         count++;
       }
     });
     return count;
   };
+
+  const filterProducts = (id: number) => {
+    setFilteredProducts(
+      cartItems.filter((item) => {
+        return item.id !== id;
+      })
+    );
+  };
+
+  console.log("filteredProducts", filteredProducts);
 
   return (
     <div className="cartproducts">
@@ -34,7 +49,8 @@ const CartProducts = (props: Props) => {
 
       <hr />
 
-      {cartProducts.map((item) => {
+      {cartItems.map((item) => {
+        filterProducts(item.id);
         return (
           <div>
             <div className="cartproducts__item">
