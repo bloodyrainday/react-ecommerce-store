@@ -80,7 +80,7 @@ const CartProducts = (props: Props) => {
           <div>
             <div className="cartproducts__total-item">
               <p>Subtotal</p>
-              <p>${0}</p>
+              <p>${cartItems.reduce((acc, curr) => acc + curr.new_price, 0)}</p>
             </div>
 
             <hr />
@@ -94,7 +94,7 @@ const CartProducts = (props: Props) => {
 
             <div className="cartproducts__total-item">
               <p>Total</p>
-              <p>${0}</p>
+              <p>${cartItems.reduce((acc, curr) => acc + curr.new_price, 0)}</p>
             </div>
           </div>
 
