@@ -10,6 +10,10 @@ type Props = {};
 const CartProducts = (props: Props) => {
   const { cartItems } = React.useContext(ShopContext);
 
+  const [filteredProducts, setFilteredProducts] = React.useState(
+    Array.from(new Set(cartItems))
+  );
+
   const countQuantity = (id: number) => {
     let count = 0;
     cartItems.map((product) => {
@@ -20,13 +24,15 @@ const CartProducts = (props: Props) => {
     return count;
   };
 
-  const filteredProducts = Array.from(new Set(cartItems));
-
   const countProductTotalPrice = (price: number, id: number) => {
     return price * countQuantity(id);
   };
 
-  console.log("filteredProducts", filteredProducts);
+  const removeProductFromCart = (id: number) => {
+    setFilteredProducts(filteredProducts.filter((item) => item.id !== id));
+  };
+
+  console.log("filteredProducts", cartItems);
 
   return (
     <div className="cartproducts">
@@ -57,6 +63,7 @@ const CartProducts = (props: Props) => {
               </span>
               <p>${countProductTotalPrice(item.new_price, item.id)}</p>
               <img
+                onClick={() => removeProductFromCart(item.id)}
                 className="cartproducts__remove-icon"
                 src={removeIcon}
                 alt="remove-icon"
