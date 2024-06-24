@@ -4,21 +4,15 @@ import "./style.scss";
 import { ShopContext } from "../../App";
 
 import removeIcon from "../../assets/cart_cross_icon.png";
-import { TypeItem } from "../Popular";
 
 type Props = {};
 
 const CartProducts = (props: Props) => {
-  const { all_product, cartItems, setCartProducts } =
-    React.useContext(ShopContext);
-
-  const [filteredProducts, setFilteredProducts] = React.useState<
-    Array<TypeItem>
-  >([]);
+  const { cartItems } = React.useContext(ShopContext);
 
   const countQuantity = (id: number) => {
     let count = 0;
-    cartItems.filter((product) => {
+    cartItems.map((product) => {
       if (product.id === id) {
         count++;
       }
@@ -26,12 +20,10 @@ const CartProducts = (props: Props) => {
     return count;
   };
 
-  const filterProducts = (id: number) => {
-    setFilteredProducts(
-      cartItems.filter((item) => {
-        return item.id !== id;
-      })
-    );
+  const filteredProducts = Array.from(new Set(cartItems));
+
+  const countProductTotalPrice = (price: number, id: number) => {
+    return price * countQuantity(id);
   };
 
   console.log("filteredProducts", filteredProducts);
@@ -49,8 +41,7 @@ const CartProducts = (props: Props) => {
 
       <hr />
 
-      {cartItems.map((item) => {
-        filterProducts(item.id);
+      {filteredProducts.map((item) => {
         return (
           <div>
             <div className="cartproducts__item">
@@ -64,7 +55,7 @@ const CartProducts = (props: Props) => {
               <span className="cartproducts__btn-quantity">
                 {countQuantity(item.id)}
               </span>
-              <p>$10</p>
+              <p>${countProductTotalPrice(item.new_price, item.id)}</p>
               <img
                 className="cartproducts__remove-icon"
                 src={removeIcon}
