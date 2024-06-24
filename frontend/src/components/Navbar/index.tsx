@@ -5,14 +5,14 @@ import "./style.scss";
 import logo from "../../assets/logo.png";
 import cartIcon from "../../assets/cart_icon.png";
 import { Link } from "react-router-dom";
-// import { ShopContext } from "../../index";
+import { ShopContext } from "../../App";
 
 // import { IContextValue } from "../../index";
 
 type Props = {};
 
 const Navbar = (props: Props) => {
-  // const { all_product } = React.useContext<IContextValue>(ShopContext);
+  const { cartItems } = React.useContext(ShopContext);
   // // console.log(all_product);
   const [isLinkClicked, setIsLinkClicked] = React.useState(0);
 
@@ -62,7 +62,7 @@ const Navbar = (props: Props) => {
         <div className="navbar__cart">
           <Link to="/cart">
             <img src={cartIcon} alt="cart-icon" />
-            <span>0</span>
+            <span>{cartItems.length}</span>
           </Link>
         </div>
       </div>

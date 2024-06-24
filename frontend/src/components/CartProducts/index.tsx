@@ -8,7 +8,7 @@ import removeIcon from "../../assets/cart_cross_icon.png";
 type Props = {};
 
 const CartProducts = (props: Props) => {
-  const { cartItems } = React.useContext(ShopContext);
+  const { cartItems, setCartProducts } = React.useContext(ShopContext);
 
   const [filteredProducts, setFilteredProducts] = React.useState(
     Array.from(new Set(cartItems))
@@ -30,6 +30,7 @@ const CartProducts = (props: Props) => {
 
   const removeProductFromCart = (id: number) => {
     setFilteredProducts(filteredProducts.filter((item) => item.id !== id));
+    setCartProducts(cartItems.filter((item) => item.id !== id));
   };
 
   console.log("filteredProducts", cartItems);

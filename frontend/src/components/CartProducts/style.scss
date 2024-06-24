@@ -22,11 +22,17 @@
   &__item {
     display: grid;
     grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
     gap: 75px;
     padding: 20px 0;
     color: #454545;
     font-size: 17px;
     font-weight: 500;
+
+    p {
+      text-align: center;
+    }
   }
 
   &__icon {
@@ -41,6 +47,7 @@
     height: 50px;
     border: 2px solid #ebebeb;
     background-color: white;
+    margin: 0 auto;
   }
 
   &__remove-icon {
