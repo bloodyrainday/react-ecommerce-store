@@ -22,7 +22,7 @@ const Navbar = (props: Props) => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <Link to="/">
+        <Link to="/" onClick={() => clickLink(0)}>
           <img src={logo} alt="logo" />
           <p>SHOPPER</p>
         </Link>

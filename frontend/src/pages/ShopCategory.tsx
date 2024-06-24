@@ -16,7 +16,7 @@ const ShopCategory = ({ category, banner }: Props) => {
 
   console.log("usecontext", all_product);
   return (
-    <div className="shop-category">
+    <div className="shop-category" style={{ paddingTop: "97px" }}>
       <img className="shop-category__banner" src={banner} alt="banner" />
 
       <div className="shop-category__indexSort">

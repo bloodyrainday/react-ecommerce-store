@@ -9,13 +9,13 @@ type Props = {};
 
 const Shop = (props: Props) => {
   return (
-    <>
+    <div style={{ paddingTop: "97px" }}>
       <Banner />
       <Popular />
       <Offers />
       <NewCollections />
       <NewsLetter />
-    </>
+    </div>
   );
 };
 
