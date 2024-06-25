@@ -5,7 +5,7 @@ type Props = {};
 
 const Cart = (props: Props) => {
   return (
-    <div>
+    <div style={{ paddingTop: "97px" }}>
       <CartProducts />
     </div>
   );

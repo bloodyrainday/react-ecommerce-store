@@ -18,7 +18,7 @@ const Product = (props: Props) => {
     all_product.find((e: TypeItem) => e.id === Number(productId));
   // console.log("product", product);
   return (
-    <div className="product">
+    <div className="product" style={{ paddingTop: "97px" }}>
       <ProductLinkPath product={product} />
       <ProductDisplay product={product} />
       <DescriptionBox />

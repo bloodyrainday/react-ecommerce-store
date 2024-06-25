@@ -26,10 +26,9 @@
 
   &__products {
     margin: 20px 170px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 80px;
-    column-gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px 30px;
   }
 
   &__loadmorebtn {

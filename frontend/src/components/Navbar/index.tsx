@@ -22,33 +22,39 @@ const Navbar = (props: Props) => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <Link to="/" onClick={() => clickLink(0)}>
+        <Link
+          to="/"
+          onClick={() => {
+            clickLink(0);
+            window.scrollTo(0, 0);
+          }}
+        >
           <img src={logo} alt="logo" />
           <p>SHOPPER</p>
         </Link>
       </div>
 
       <ul className="navbar__menu">
-        <Link to="/">
+        <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <li onClick={() => clickLink(0)}>
             shop{isLinkClicked === 0 && <span></span>}
           </li>
         </Link>
 
-        <Link to="/men">
+        <Link to="/men" onClick={() => window.scrollTo(0, 0)}>
           <li onClick={() => clickLink(1)}>
             men{isLinkClicked === 1 && <span></span>}
           </li>
         </Link>
 
-        <Link to="/women">
+        <Link to="/women" onClick={() => window.scrollTo(0, 0)}>
           <li onClick={() => clickLink(2)}>
             women
             {isLinkClicked === 2 && <span></span>}
           </li>
         </Link>
 
-        <Link to="/kids">
+        <Link to="/kids" onClick={() => window.scrollTo(0, 0)}>
           <li onClick={() => clickLink(3)}>
             kids{isLinkClicked === 3 && <span></span>}
           </li>
@@ -56,11 +62,11 @@ const Navbar = (props: Props) => {
       </ul>
 
       <div className="navbar__login">
-        <Link to="/login">
+        <Link to="/login" onClick={() => window.scrollTo(0, 0)}>
           <button>login</button>
         </Link>
         <div className="navbar__cart">
-          <Link to="/cart">
+          <Link to="/cart" onClick={() => window.scrollTo(0, 0)}>
             <img src={cartIcon} alt="cart-icon" />
             <span>{cartItems.length}</span>
           </Link>
