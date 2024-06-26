@@ -122,7 +122,7 @@
 
     &__hand {
       p {
-        font-size: 60px;
+        font-size: 50px;
       }
 
       img {
@@ -140,6 +140,80 @@
       img {
         width: 400px;
       }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .banner {
+    &__left {
+      padding-left: 30px;
+
+      h2 {
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 40px;
+      }
+    }
+
+    &__hand {
+      p {
+        font-size: 40px;
+      }
+
+      img {
+        width: 50px;
+      }
+    }
+
+    &__latest {
+      width: 175px;
+      height: 40px;
+      font-size: 13px;
+    }
+
+    &__right {
+      img {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .banner {
+    flex-direction: column;
+
+    &__right {
+      display: none;
+    }
+
+    &__left {
+      h2 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 50px;
+      }
+    }
+
+    &__hand {
+      p {
+        font-size: 50px;
+      }
+
+      img {
+        width: 55px;
+      }
+    }
+
+    &__latest {
+      width: 200px;
+      height: 45px;
+      font-size: 14px;
     }
   }
 }
