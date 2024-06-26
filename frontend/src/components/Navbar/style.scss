@@ -81,6 +81,11 @@
   &__cart {
     position: relative;
 
+    a {
+      display: flex;
+      align-items: center;
+    }
+
     img {
     }
 
@@ -199,6 +204,26 @@
 
     &__dropdown.open {
       rotate: -90deg;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 8px 0;
+    gap: 0;
+
+    &__logo {
+      scale: 0.8;
+    }
+
+    &__menu {
+      height: 70px;
+      top: 50px;
+    }
+
+    &__cart {
+      scale: 0.8;
     }
   }
 }
