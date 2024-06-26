@@ -4,6 +4,8 @@ import "./style.scss";
 
 import logo from "../../assets/logo.png";
 import cartIcon from "../../assets/cart_icon.png";
+import dropDownIcon from "../../assets/dropdown_icon.png";
+
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../App";
 
@@ -16,8 +18,14 @@ const Navbar = (props: Props) => {
   // // console.log(all_product);
   const [isLinkClicked, setIsLinkClicked] = React.useState(0);
 
+  const menuRef = React.useRef<HTMLUListElement>(null!);
+
   const clickLink = (number: number) => {
     setIsLinkClicked(number);
+  };
+
+  const handleDropDownIcon = () => {
+    menuRef.current.classList.toggle("clicked");
   };
   return (
     <nav className="navbar">
@@ -34,7 +42,13 @@ const Navbar = (props: Props) => {
         </Link>
       </div>
 
-      <ul className="navbar__menu">
+      <img
+        onClick={() => handleDropDownIcon()}
+        src={dropDownIcon}
+        alt="menu-icon"
+        style={{ width: "10px", height: "10px" }}
+      />
+      <ul className="navbar__menu" ref={menuRef}>
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <li onClick={() => clickLink(0)}>
             shop{isLinkClicked === 0 && <span></span>}
