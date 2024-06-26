@@ -7,6 +7,11 @@
   box-shadow: 0 1px 3px -2px black;
   background-color: white;
   z-index: 10;
+  align-items: center;
+
+  &__dropdown {
+    display: none;
+  }
 
   &__logo {
     display: flex;
@@ -100,6 +105,9 @@
   display: flex;
 }
 
+.navbar__menu.clicked {
+}
+
 @media (max-width: 1280px) {
   .navbar {
     padding: 12px 50px;
@@ -144,7 +152,6 @@
     &__menu {
       gap: 25px;
       font-size: 14px;
-      display: none;
     }
 
     &__login {
@@ -166,6 +173,32 @@
         width: 18px;
         height: 18px;
       }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    padding: 10px 0;
+    &__menu {
+      display: none;
+      height: 80px;
+      position: absolute;
+      width: 100%;
+      top: 50px;
+      background-color: white;
+      justify-content: center;
+    }
+
+    &__dropdown {
+      display: flex;
+      cursor: pointer;
+      rotate: 0deg;
+      transition: 0.5s;
+    }
+
+    &__dropdown.open {
+      rotate: -90deg;
     }
   }
 }

@@ -4,7 +4,7 @@ import "./style.scss";
 
 import logo from "../../assets/logo.png";
 import cartIcon from "../../assets/cart_icon.png";
-import dropDownIcon from "../../assets/dropdown_icon.png";
+import { IoIosArrowDropdown } from "react-icons/io";
 
 import { Link } from "react-router-dom";
 import { ShopContext } from "../../App";
@@ -24,8 +24,9 @@ const Navbar = (props: Props) => {
     setIsLinkClicked(number);
   };
 
-  const handleDropDownIcon = () => {
+  const handleDropDownIcon = (e: React.MouseEvent<SVGElement, MouseEvent>) => {
     menuRef.current.classList.toggle("clicked");
+    e.currentTarget.classList.toggle("open");
   };
   return (
     <nav className="navbar">
@@ -42,12 +43,18 @@ const Navbar = (props: Props) => {
         </Link>
       </div>
 
-      <img
+      <IoIosArrowDropdown
+        className="navbar__dropdown"
+        onClick={(e) => handleDropDownIcon(e)}
+        style={{ width: "30px", height: "30px" }}
+      />
+      {/* <img
+        className="navbar__dropdown"
         onClick={() => handleDropDownIcon()}
         src={dropDownIcon}
         alt="menu-icon"
         style={{ width: "10px", height: "10px" }}
-      />
+      /> */}
       <ul className="navbar__menu" ref={menuRef}>
         <Link to="/" onClick={() => window.scrollTo(0, 0)}>
           <li onClick={() => clickLink(0)}>
