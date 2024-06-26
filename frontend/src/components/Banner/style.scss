@@ -105,3 +105,41 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .banner {
+    &__left {
+      padding-left: 80px;
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 50px;
+      }
+    }
+
+    &__hand {
+      p {
+        font-size: 60px;
+      }
+
+      img {
+        width: 65px;
+      }
+    }
+
+    &__latest {
+      width: 220px;
+      height: 50px;
+      font-size: 16px;
+    }
+
+    &__right {
+      img {
+        width: 400px;
+      }
+    }
+  }
+}
