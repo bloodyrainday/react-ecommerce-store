@@ -105,3 +105,11 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .shop-category {
+    &__products {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
