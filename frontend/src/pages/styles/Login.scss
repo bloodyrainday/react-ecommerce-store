@@ -117,3 +117,26 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+  .login {
+    &__container {
+      padding: 20px 30px;
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+
+    &__fields {
+      input {
+        height: 50px;
+      }
+    }
+
+    button {
+      height: 50px;
+      font-size: 16px;
+    }
+  }
+}
