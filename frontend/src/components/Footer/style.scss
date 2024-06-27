@@ -58,3 +58,37 @@
     }
   }
 }
+
+@media (max-width: 800px) {
+  .footer {
+    gap: 20px;
+
+    &__logo {
+      gap: 10px;
+      align-items: end;
+
+      img {
+        width: 40px;
+      }
+
+      p {
+        font-size: 25px;
+      }
+    }
+
+    &__links {
+      font-size: 14px;
+      gap: 10px;
+    }
+
+    &__socials {
+      img {
+        width: 22px;
+      }
+    }
+
+    &__copyright {
+      font-size: 13px;
+    }
+  }
+}
