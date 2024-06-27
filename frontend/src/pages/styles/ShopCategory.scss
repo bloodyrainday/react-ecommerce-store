@@ -26,8 +26,8 @@
 
   &__products {
     margin: 20px 170px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 80px 30px;
   }
 
@@ -44,5 +44,45 @@
     cursor: pointer;
     font-size: 18px;
     font-weight: 500;
+  }
+}
+
+@media (max-width: 1280px) {
+  .shop-category {
+    &__banner {
+      margin: 20px auto;
+      width: 90%;
+    }
+
+    &__indexSort {
+      width: 90%;
+      margin: auto;
+
+      p {
+        font-size: 12px;
+      }
+    }
+
+    &__sort {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
+    &__products {
+      width: 90%;
+      margin: 10px auto;
+      gap: 40px 30px;
+
+      .item {
+        margin: auto;
+      }
+    }
+
+    &__loadmorebtn {
+      margin: 100px auto;
+      width: 200px;
+      height: 60px;
+      font-size: 16px;
+    }
   }
 }
