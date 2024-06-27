@@ -101,13 +101,44 @@
 
       input {
         width: 300px;
-        font-size: 400px;
+        font-size: 14px;
       }
 
       button {
         width: 120px;
         height: 50px;
         font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .newsletter {
+    margin-bottom: 30px;
+    height: 35vh;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    &__emailform {
+      width: 400px;
+      height: 40px;
+
+      input {
+        width: 200px;
+        font-size: 13px;
+      }
+
+      button {
+        width: 100px;
+        height: 40px;
+        font-size: 13px;
       }
     }
   }
