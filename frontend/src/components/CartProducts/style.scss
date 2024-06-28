@@ -23,7 +23,7 @@
     display: grid;
     grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: 75px;
     padding: 20px 0;
     color: #454545;
@@ -31,7 +31,7 @@
     font-weight: 500;
 
     p {
-      text-align: center;
+      text-align: start;
     }
   }
 
@@ -41,13 +41,12 @@
 
   &__btn-quantity {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 64px;
     height: 50px;
     border: 2px solid #ebebeb;
     background-color: white;
-    margin: 0 auto;
   }
 
   &__remove-icon {
@@ -123,6 +122,70 @@
       background-color: black;
       color: white;
       cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .cartproducts {
+    margin: 60px 50px;
+
+    &__item-titles {
+      grid-template-columns: 0.5fr 3fr 0.5fr 0.5fr 0.5fr 0.5fr;
+      gap: 20px;
+      padding: 15px 0;
+      font-size: 15px;
+    }
+
+    &__item {
+      grid-template-columns: 0.5fr 3fr 0.5fr 0.5fr 0.5fr 0.5fr;
+      gap: 20px;
+      padding: 15px 0;
+      font-size: 15px;
+    }
+
+    &__icon {
+      height: 50px;
+    }
+
+    &__remove-icon {
+      margin: auto;
+    }
+
+    &__btn-quantity {
+      width: 40px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    &__down {
+      margin: 80px 0;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    &__total-list {
+      margin: 0;
+
+      button {
+        max-width: 200px;
+        height: 45px;
+        font-size: 13px;
+      }
+    }
+
+    &__promobox {
+      width: auto;
+      max-width: 500px;
+
+      input {
+        width: 100%;
+      }
+
+      button {
+        width: 120px;
+        margin-left: -125px;
+      }
     }
   }
 }

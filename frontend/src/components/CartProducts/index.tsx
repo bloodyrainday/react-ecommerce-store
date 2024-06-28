@@ -50,7 +50,7 @@ const CartProducts = (props: Props) => {
 
       {filteredProducts.map((item) => {
         return (
-          <div>
+          <>
             <div className="cartproducts__item">
               <img
                 className="cartproducts__icon"
@@ -71,7 +71,7 @@ const CartProducts = (props: Props) => {
               />
             </div>
             <hr />
-          </div>
+          </>
         );
       })}
 
