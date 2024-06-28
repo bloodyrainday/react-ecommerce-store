@@ -189,3 +189,16 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .cartproducts {
+    &__item-titles {
+      display: none;
+    }
+
+    &__item {
+      grid-template-columns: 0.5fr 3fr 0.5fr;
+      gap: 10px;
+    }
+  }
+}
